@@ -28,7 +28,6 @@ class MyApp extends StatelessWidget {
       home: const   Directionality(
           textDirection: TextDirection.rtl,
           child: HomeScreen()),
-
       builder: (context, child) => ResponsiveWrapper.builder(
         BouncingScrollWrapper.builder(context, child!),
         maxWidth: 1200,

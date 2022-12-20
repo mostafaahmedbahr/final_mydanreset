@@ -21,43 +21,7 @@ class HomeScreen extends StatelessWidget {
         builder: (controller) {
           return Scaffold(
             backgroundColor: AppColors.mainColorWhite,
-            appBar: CustomAppBar(
-              appBarToolbarHeight: 70,
-              automaticallyLeading: true,
-              appBarBackgroundColor: AppColors.mainColorWhite,
-              appElevation: 0,
-              leadingWidget:const Padding(
-                  padding: EdgeInsets.only(right: 20),
-                  child: CircleAvatar(
-                    backgroundImage: AssetImage("assets/images/img.png",),
-                    backgroundColor: Color(0xffFFFFFF),
-                    minRadius: 50,
-                    maxRadius: 75,
-                  ),
-                ) ,
-              titleContent: const Text("تسجيل الدخول",
-                style: TextStyle(
-                  color: Color(0xff878787),
-                  fontSize: 17,
-                  fontWeight: FontWeight.bold,
-                ),),
-              actionsWidgets: [
-                IconButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context, PageTransition(
-                        duration: const Duration(milliseconds: 400),
-                        reverseDuration: const Duration(milliseconds: 400),
-                        type: PageTransitionType.leftToRight,
-                        child: const NotificationsScreen(),
-                        inheritTheme: true,
-                        ctx: context));
-                  },
-                  icon: Image.asset("assets/images/img_11.png",
-                    height: 20,),
-                ),
-              ],
-             ),
+
             // body: Padding(
             //   padding: const EdgeInsets.all(22.0),
             //   child: SingleChildScrollView(
