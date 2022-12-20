@@ -1,16 +1,12 @@
 import 'package:final_mydanreset/controller/home_controller.dart';
 import 'package:final_mydanreset/screens/hotels_details_screen/hotels_details.dart';
 import 'package:final_mydanreset/screens/hotels_screen/hotels_widgets/main_part_widget.dart';
-import 'package:final_mydanreset/widgets/custom_app_bar.dart';
-import 'package:final_mydanreset/widgets/custom_text.dart';
+ import 'package:final_mydanreset/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
+ import 'package:get/get.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:responsive_framework/responsive_framework.dart';
-import '../../core/components/colors.dart';
-import '../../core/utils/navigator.dart';
-import '../notifications_screen/notifications_screen.dart';
+ import '../../core/components/colors.dart';
+ import '../notifications_screen/notifications_screen.dart';
  class HotelsScreen extends StatefulWidget {
   const HotelsScreen({Key? key}) : super(key: key);
 
@@ -71,7 +67,7 @@ class _HotelsScreenState extends State<HotelsScreen> {
           return false;
         },
         child: ListView(
-//
+
           children: [
             Container(
               height:310 ,
