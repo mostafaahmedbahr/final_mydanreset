@@ -71,7 +71,7 @@ class _HotelsScreenState extends State<HotelsScreen> {
           return false;
         },
         child: ListView(
-
+//
           children: [
             Container(
               height:310 ,
