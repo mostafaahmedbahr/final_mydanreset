@@ -15,51 +15,31 @@ import 'package:page_transition/page_transition.dart';
 }
 
 class _HotelsScreenState extends State<HotelsScreen> {
+  ScrollController scrollController = ScrollController();
+  ScrollPhysics _physics = const ClampingScrollPhysics();
   var homeController = Get.put(HomeController());
-    List   isDesktop =[
-
-  ];
+  @override
+  void initState() {
+    super.initState();
+    scrollController.addListener(() {
+      if (scrollController.position.pixels <= 56) {
+        _physics = const ClampingScrollPhysics();
+      } else {
+        _physics = const BouncingScrollPhysics();
+      }
+      setState(() {});
+    });
+  }
+  @override
+  void dispose() {
+    super.dispose();
+    scrollController.dispose(); //always dispose the controller
+  }
   @override
   Widget build(BuildContext context) {
     return  SafeArea(
       child: Scaffold(
-      // appBar: CustomAppBar(
-      //   appBarToolbarHeight: 70,
-      //   automaticallyLeading: true,
-      //   appBarBackgroundColor: AppColors.mainColorWhite,
-      //   appElevation: 0,
-      //   leadingWidget:const Padding(
-      //     padding: EdgeInsets.only(right: 20),
-      //     child: CircleAvatar(
-      //       backgroundImage: AssetImage("assets/images/img.png",),
-      //       backgroundColor: Color(0xffFFFFFF),
-      //       minRadius: 50,
-      //       maxRadius: 75,
-      //     ),
-      //   ) ,
-      //   titleContent: const Text("تسجيل الدخول",
-      //     style: TextStyle(
-      //       color: Color(0xff878787),
-      //       fontSize: 17,
-      //       fontWeight: FontWeight.bold,
-      //     ),),
-      //   actionsWidgets: [
-      //     IconButton(
-      //       onPressed: () {
-      //         Navigator.push(
-      //             context, PageTransition(
-      //             duration: const Duration(milliseconds: 400),
-      //             reverseDuration: const Duration(milliseconds: 400),
-      //             type: PageTransitionType.leftToRight,
-      //             child: const NotificationsScreen(),
-      //             inheritTheme: true,
-      //             ctx: context));
-      //       },
-      //       icon: Image.asset("assets/images/img_11.png",
-      //         height: 20,),
-      //     ),
-      //   ],
-      // ),
+
       body: NotificationListener<OverscrollIndicatorNotification>(
         onNotification: (overScroll)
         {
@@ -67,10 +47,11 @@ class _HotelsScreenState extends State<HotelsScreen> {
           return false;
         },
         child: ListView(
-
+          controller: scrollController,
+          physics: _physics,
           children: [
             Container(
-              height:310 ,
+              height:310,
               width: double.infinity,
               color: AppColors.mainColorWhite,
               child:  Stack(
@@ -192,18 +173,16 @@ class _HotelsScreenState extends State<HotelsScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children:const [
-                      Text("فنادق شائعة",
-                        style: TextStyle(
+                      CustomText(text: "فنادق شائعة",
                           fontWeight: FontWeight.bold,
                           fontSize: 17,
-                          color: AppColors.secondColor,
-                        ),),
-                      Text("المزيد",
-                        style: TextStyle(
+                          textColor: AppColors.secondColor,
+                        ),
+                      CustomText(text: "المزيد",
                           fontWeight: FontWeight.bold,
                           fontSize: 14,
-                          color: AppColors.mainColorGrey,
-                        ),),
+                          textColor: AppColors.mainColorGrey,
+                        ),
                     ],
                   ),
                   const SizedBox(
@@ -245,13 +224,12 @@ class _HotelsScreenState extends State<HotelsScreen> {
                                   Padding(padding:const EdgeInsets.symmetric(vertical: 10),
                                     child:  Image.asset("assets/images/img_2.png",)
                                     ,),
-                                  const Text("المخلة دبى",
+                                  const CustomText(text: "المخلة دبى",
                                     maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(
-                                      color: AppColors.secondColor,
+                                    textOverflow: TextOverflow.ellipsis,
+                                      textColor: AppColors.secondColor,
                                       fontSize: 14,
-                                    ),),
+                                    ),
                                   Row(
                                     children: [
                                       Row(
@@ -261,21 +239,17 @@ class _HotelsScreenState extends State<HotelsScreen> {
                                             width: 12,
                                           ),
                                           const SizedBox(width: 8,),
-                                          const  Text("الامارات",
-                                            style: TextStyle(
-                                              color: AppColors.mainColorGrey,
+                                          const  CustomText(text: "الامارات",
+                                              textColor: AppColors.mainColorGrey,
                                               fontSize: 14,
-                                            ),),
+                                            ),
                                         ],
                                       ),
                                       const Spacer(),
-                                      const  Text("\$35",
-                                        style: TextStyle(
+                                      const  CustomText(text: "\$35",
                                           fontSize: 14,
-                                          color:   AppColors.mainColor,
-                                        ),),
-
-
+                                          textColor:   AppColors.mainColor,
+                                      ),
                                     ],
                                   ),
                                 ],
@@ -294,12 +268,11 @@ class _HotelsScreenState extends State<HotelsScreen> {
                   const SizedBox(height: 20,),
                   const  Align(
                     alignment:  Alignment.bottomRight,
-                    child: Text("الاعلانات",
-                      style: TextStyle(
+                    child: CustomText(text: "الاعلانات",
                           fontWeight: FontWeight.bold,
                           fontSize: 17,
-                          color:AppColors.secondColor
-                      ),),
+                          textColor:AppColors.secondColor
+                    ),
                   ),
                   const SizedBox(height: 12,),
                   SizedBox(
@@ -333,19 +306,16 @@ class _HotelsScreenState extends State<HotelsScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children:const [
-                      Text("افضل العروض",
-                        style: TextStyle(
+                      CustomText(text:"افضل العروض",
                             fontWeight: FontWeight.bold,
                             fontSize: 17,
-                            color: AppColors.secondColor
-                        ),),
-                      Text("المزيد",
-                        style: TextStyle(
+                            textColor: AppColors.secondColor
+                       ),
+                      CustomText(text: "المزيد",
                             fontWeight: FontWeight.bold,
                             fontSize: 14,
-                            color: AppColors.mainColorGrey
-                        ),),
-
+                            textColor: AppColors.mainColorGrey
+                       ),
                     ],
                   ),
                   const SizedBox(height: 12,),
@@ -381,10 +351,9 @@ class _HotelsScreenState extends State<HotelsScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
-                                    const Text("المخلة دبى",
-                                      style: TextStyle(
-                                          color:AppColors.secondColor
-                                      ),),
+                                    const CustomText(text: "المخلة دبى",
+                                          textColor:AppColors.secondColor
+                                   ),
                                     Row(
                                       children: [
                                         Image.asset("assets/images/img_12.png",
@@ -392,21 +361,16 @@ class _HotelsScreenState extends State<HotelsScreen> {
                                           width: 12,
                                         ),
                                         const SizedBox(width: 8,),
-                                        const  Text("الامارات",
-                                          style: TextStyle(
-                                            color: AppColors.mainColorGrey,
+                                        const  CustomText(text: "الامارات",
+                                            textColor: AppColors.mainColorGrey,
                                             fontSize: 14,
-                                          ),),
-
-
+                                          ),
                                       ],
                                     ),
-                                    const  Text("\$35",
-                                      style: TextStyle(
+                                    const  CustomText(text: "\$35",
                                         fontSize: 14,
-                                        color:   AppColors.mainColor,
-                                      ),),
-
+                                        textColor:   AppColors.mainColor,
+                                     ),
                                   ],
                                 ),
                               ),

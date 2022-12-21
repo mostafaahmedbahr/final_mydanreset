@@ -5,8 +5,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:map_launcher/map_launcher.dart';
 
-import '../classification_screen/classification_screen.dart';
-import '../map_screen/map_screen.dart';
+import '../../classification_screen/classification_screen.dart';
+import '../../map_screen/map_screen.dart';
 
 class HotelsSearchResultScreen extends StatefulWidget {
   const HotelsSearchResultScreen({Key? key}) : super(key: key);

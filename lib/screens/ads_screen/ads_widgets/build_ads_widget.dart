@@ -1,3 +1,4 @@
+import 'package:final_mydanreset/core/components/colors.dart';
 import 'package:flutter/material.dart';
 class BuildAdsWidget extends StatelessWidget {
   const BuildAdsWidget({Key? key, required this.width, required this.height, required this.imageUrl, required this.radius}) : super(key: key);
@@ -13,7 +14,7 @@ class BuildAdsWidget extends StatelessWidget {
       width: width,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(radius),
-        color: Colors.white,
+        color: AppColors.mainColorWhite,
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(radius),

@@ -1,15 +1,14 @@
 import 'package:final_mydanreset/core/components/colors.dart';
 import 'package:final_mydanreset/screens/my_reservations_screen/MyReservations_widgets/build_reserve__custom_card.dart';
-import 'package:final_mydanreset/widgets/custom_text.dart';
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
+ import 'package:get/get.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../../controller/my_reservation_controller.dart';
 import '../../widgets/custom_app_bar.dart';
 import '../notifications_screen/notifications_screen.dart';
+import 'MyReservations_widgets/build_status_widget.dart';
  class MyReservationsScreen extends StatelessWidget  {
   const MyReservationsScreen({Key? key}) : super(key: key);
 
@@ -68,74 +67,51 @@ import '../notifications_screen/notifications_screen.dart';
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                          Expanded(
-                            child: InkWell(
-                              onTap:(){
-                                c.changeIndex(c.pageIndex=1);
-                                print(c.pageIndex);
-                              },
-                              child: Container(
-                                height: double.infinity,
-                                color :c.pageIndex==1 ? AppColors.hoverMainColor : AppColors.mainColor,
-                                child:  const Center(
-                                  child:  Text("قادمة",
-                                    style: TextStyle(
-                                      color:Color(0xffFFFFFF) ,
-                                      fontWeight: FontWeight.w800,
-                                      fontSize: 17,
-                                    ),
-                                  ),
-
-                              ),
-                          ),
-                            ),
+                        BuildStatusWidget(
+                          text: "قادمة",
+                          color: c.pageIndex==1 ? AppColors.hoverMainColor : AppColors.mainColor,
+                          onTap: (){
+                            c.changeIndex(c.pageIndex=1);
+                            print(c.pageIndex);
+                          },
                         ),
-                        Expanded(
-                          child: InkWell(
-                            onTap:(){
-                              c.changeIndex(c.pageIndex=2);
-                              print(c.pageIndex);
-                            },
-                            child: Container(
-                              height: double.infinity,
-                              color :c.pageIndex==2 ? AppColors.hoverMainColor : AppColors.mainColor,
-                              child:  const Center(
-                                child:  Text("نشطة",
-                                  style: TextStyle(
-                                    color:Color(0xffFFFFFF) ,
-                                    fontWeight: FontWeight.w800,
-                                    fontSize: 17,
-                                  ),
-                                ),
-
-                              ),
-                            ),
-                          ),
+                        BuildStatusWidget(
+                          text: "نشطة",
+                          color: c.pageIndex==2 ? AppColors.hoverMainColor : AppColors.mainColor,
+                          onTap: (){
+                            c.changeIndex(c.pageIndex=2);
+                            print(c.pageIndex);
+                          },
                         ),
-                        Expanded(
-                          child: InkWell(
-                            onTap:(){
-                              c.changeIndex(c.pageIndex=3);
-                              print(c.pageIndex);
-                            },
-                            child: Container(
-                              height: double.infinity,
-                              color :c.pageIndex==3 ? AppColors.hoverMainColor : AppColors.mainColor,
-                              child:  const Center(
-                                child:  Text("مكتملة",
-                                  style: TextStyle(
-                                    color:Color(0xffFFFFFF) ,
-                                    fontWeight: FontWeight.w800,
-                                    fontSize: 17,
-                                  ),
-                                ),
-
-                              ),
-                            ),
-                          ),
+                        BuildStatusWidget(
+                          text: "مكتملة",
+                          color: c.pageIndex==3 ? AppColors.hoverMainColor : AppColors.mainColor,
+                          onTap: (){
+                            c.changeIndex(c.pageIndex=3);
+                            print(c.pageIndex);
+                          },
                         ),
-
-
+                        // Expanded(
+                        //   child: InkWell(
+                        //     onTap:(){
+                        //       c.changeIndex(c.pageIndex=3);
+                        //       print(c.pageIndex);
+                        //     },
+                        //     child: Container(
+                        //       height: double.infinity,
+                        //       color :c.pageIndex==3 ? AppColors.hoverMainColor : AppColors.mainColor,
+                        //       child:  const Center(
+                        //         child:  CustomText(text: "مكتملة",
+                        //             textColor:AppColors.mainColorWhite ,
+                        //             fontWeight: FontWeight.w800,
+                        //             fontSize: 17,
+                        //
+                        //         ),
+                        //
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
                       ],
                     ),
                   ),
@@ -152,11 +128,11 @@ import '../notifications_screen/notifications_screen.dart';
                   contentPadding:const EdgeInsets.symmetric(vertical: 8,horizontal: 16),
                   hintText: "الخدمات - الكل",
                   hintStyle:const TextStyle(
-                    color: Color(0xff1E1E1E),
+                    color: AppColors.mainColorBlack,
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
                   ),
-                  suffixIcon: const  Icon(IconlyLight.arrowDown2,color: Color(0xff1E1E1E),),
+                  suffixIcon: const  Icon(IconlyLight.arrowDown2,color:AppColors.mainColorBlack,),
                   enabledBorder: OutlineInputBorder(
                     borderSide: const BorderSide(
                       width: 1, color: Colors.grey,

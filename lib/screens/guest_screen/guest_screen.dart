@@ -7,6 +7,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:dotted_line/dotted_line.dart';
 import 'package:get/get.dart';
 import '../../core/components/colors.dart';
+import '../../widgets/custom_app_bar.dart';
 import '../../widgets/divider_widget.dart';
 class GuestScreen extends StatelessWidget {
   const GuestScreen({Key? key}) : super(key: key);
@@ -16,23 +17,24 @@ class GuestScreen extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         backgroundColor:const Color(0xffF6F6F6) ,
-        appBar: AppBar(
-          backgroundColor:const Color(0xffF6F6F6) ,
-          elevation: 0,
-          title: const Text("تفاصيل النزلاء",
-            style: TextStyle(
-              color: Color(0xff1E1E1E),
-              fontSize: 20,
-              fontWeight: FontWeight.w900,
-            ),),
+        appBar:  CustomAppBar(
           centerTitle: true,
-          leading: IconButton(
+          appBarToolbarHeight: 70,
+          automaticallyLeading: true,
+          appBarBackgroundColor: const Color(0xffF6F6F6) ,
+          appElevation: 0,
+          leadingWidget: IconButton(
             onPressed: (){
               Get.back();
             },
             icon: SvgPicture.asset("assets/images/Vector.svg"),
           ),
-
+          titleContent :const CustomText(
+            text: "تفاصيل النزلاء",
+            textColor:AppColors.mainColorBlack ,
+            fontSize:20 ,
+            fontWeight:  FontWeight.w900,
+          ),
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -80,10 +82,9 @@ class GuestScreen extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
-                                    const Text("المخلة دبى",
-                                      style: TextStyle(
-                                        color: AppColors.secondColor,
-                                      ),),
+                                    const CustomText(text: "المخلة دبى",
+                                        textColor: AppColors.secondColor,
+                                     ),
                                     Row(
                                       children: [
                                         Image.asset("assets/images/img_12.png",
@@ -91,22 +92,17 @@ class GuestScreen extends StatelessWidget {
                                           width: 12,
                                         ),
                                         const SizedBox(width: 8,),
-                                        const  Text("الامارات",
-                                          style: TextStyle(
-                                            color: AppColors.mainColorGrey,
+                                        const  CustomText(text: "الامارات",
+                                            textColor: AppColors.mainColorGrey,
                                             fontSize: 14,
-                                          ),),
-
-
+                                        ),
                                       ],
                                     ),
-                                    const  Text("4 ليالي - 4 نزلاء - 2 غرفة",
-                                      style: TextStyle(
+                                    const  CustomText(text: "4 ليالي - 4 نزلاء - 2 غرفة",
                                         fontSize: 14,
                                         fontWeight: FontWeight.w800,
-                                        color:  AppColors.mainColor,
-                                      ),),
-
+                                        textColor:  AppColors.mainColor,
+                                  ),
                                   ],
                                 ),
                               ),
@@ -140,7 +136,6 @@ class GuestScreen extends StatelessWidget {
                                       fontSize: 12,
                                       fontWeight: FontWeight.w500,
                                     ),),
-
                                 ],
                               ),
                               const   Spacer(),
@@ -160,20 +155,17 @@ class GuestScreen extends StatelessWidget {
                           children: [
                             SvgPicture.asset("assets/images/Vector (7).svg"),
                             const SizedBox(width: 18,),
-                             const Text("سياسة الالغاء - ",
-                            style: TextStyle(
+                             const CustomText(text: "سياسة الالغاء - ",
                               fontWeight: FontWeight.w500,
                               fontSize: 14,
-                              color: AppColors.mainColorBlack,
-                            ),),
+                              textColor: AppColors.mainColorBlack,
+                          ),
                             const SizedBox(width: 10,),
-                            const Text(" غير قابلة للاسترد",
-                              style: TextStyle(
+                            const CustomText(text: " غير قابلة للاسترد",
                                 fontWeight: FontWeight.w500,
                                 fontSize: 14,
-                                color: AppColors.mainColorRed,
-                              ),),
-
+                                textColor: AppColors.mainColorRed,
+                            ),
                           ],
                         ),
                       const  SizedBox(height: 29,),
@@ -188,44 +180,39 @@ class GuestScreen extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children:const [
-                            Text("السعر الاجمالي",
-                              style: TextStyle(
+                            CustomText(text: "السعر الاجمالي",
                                 fontWeight: FontWeight.w800,
                                 fontSize: 14,
-                                color: AppColors.mainColorBlack,
-                              ),),
-                            Text("670 \$",
-                              style: TextStyle(
+                                textColor: AppColors.mainColorBlack,
+                            ),
+                            CustomText(text: "670 \$",
                                 fontWeight: FontWeight.w800,
                                 fontSize: 16,
-                                color: AppColors.mainColorBlack,
-                              ),),
+                                textColor: AppColors.mainColorBlack,
+                             ),
                           ],
                         ),
                         const  SizedBox(height: 2,),
-                        const Text("شاملة الخدمة والضريبة ماعد",
-                          style: TextStyle(
+                        const CustomText(text: "شاملة الخدمة والضريبة ماعد",
                             fontWeight: FontWeight.w500,
                             fontSize: 12,
-                            color: AppColors.mainColorGrey,
-                          ),),
-                        const Text("لضربية السياحية ان وجدت",
-                          style: TextStyle(
+                            textColor: AppColors.mainColorGrey,
+                     ),
+                        const CustomText(text: "لضربية السياحية ان وجدت",
                             fontWeight: FontWeight.w500,
                             fontSize: 12,
-                            color:AppColors.mainColorGrey,
-                          ),),
+                            textColor:AppColors.mainColorGrey,
+                        ),
                       ],
                     ),
                   ),
                 ),
                const SizedBox(height: 24,),
-               const Text("تفاصيل الاتصال",
-                 style: TextStyle(
+               const CustomText(text: "تفاصيل الاتصال",
                    fontSize: 17,
                    fontWeight:FontWeight.w800 ,
-                   color: AppColors.mainColorBlack,
-                 ),),
+                   textColor: AppColors.mainColorBlack,
+                ),
                 const SizedBox(height: 14,),
                 TextFormField(
                   decoration: InputDecoration(

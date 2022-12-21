@@ -13,8 +13,7 @@ import '../../widgets/custom_button.dart';
 import '../../widgets/custom_text.dart';
 import '../../widgets/divider_widget.dart';
 import '../guest_screen/guest_screen.dart';
-import '../notifications_screen/notifications_screen.dart';
-import 'hotels_details_widgets/custom_container_icon.dart';
+ import 'hotels_details_widgets/custom_container_icon.dart';
 
 class HotelsDetails extends StatelessWidget {
     const HotelsDetails({Key? key}) : super(key: key);
@@ -26,7 +25,6 @@ class HotelsDetails extends StatelessWidget {
       child: Scaffold(
         body: SingleChildScrollView(
           child: Column(
-            //assets/images/Rectangle 51.svg
             children: [
               Stack(
                 alignment: Alignment.topLeft,
@@ -101,7 +99,7 @@ class HotelsDetails extends StatelessWidget {
                        bottom: 14,
                        right: 14,
                        left: 14,
-                       child:   Container(
+                       child:  Container(
                            height: 100,
                            width: MediaQuery.of(context).size.width,
                            decoration: BoxDecoration(
@@ -233,34 +231,29 @@ class HotelsDetails extends StatelessWidget {
                         children: [
                           InkWell(
                             onTap: (){
-                              c.changeIndex(c.currentIndex=1);
+                              c.changeIndexForDetails(c.currentIndexForDetails=1);
                             },
-                            child:  Text("اختر الغرفة",
-                              style: TextStyle(
-                                color:c.currentIndex==1 ?const  Color(0xff06B3C4) :const Color(0xffBABABA),
+                            child:  CustomText(text: "اختر الغرفة",
+                                textColor:c.currentIndexForDetails==1 ?AppColors.mainColor :AppColors.grey,
                                 fontWeight: FontWeight.w800,
                                 fontSize: 17,
-                              ),),
+                             ),
                           ),
                           const  SizedBox(width: 24,),
                           InkWell(
                             onTap: (){
-                              c.changeIndex(c.currentIndex=2);
-                              // setState(() {
-                              //   index=2;
-                              // });
+                              c.changeIndex(c.currentIndexForDetails=2);
                             },
-                            child:   Text("تفاصيل الفندق",
-                              style: TextStyle(
-                                color:c.currentIndex ==2 ?  const  Color(0xff06B3C4) :const Color(0xffBABABA),
+                            child:   CustomText(text: "تفاصيل الفندق",
+                                textColor:c.currentIndexForDetails ==2 ? AppColors.mainColor :AppColors.grey,
                                 fontWeight: FontWeight.w800,
                                 fontSize: 17,
-                              ),),
+                           ),
                           ),
                         ],
                       ),
                       const SizedBox(height: 20,),
-                      c.currentIndex == 1 ?   Column(
+                      c.currentIndexForDetails == 1 ?   Column(
                         children: [
                           ListView.separated(
                             physics: const NeverScrollableScrollPhysics(),
@@ -305,12 +298,11 @@ class HotelsDetails extends StatelessWidget {
                                           mainAxisAlignment: MainAxisAlignment.start,
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
-                                            const    Text("اسم الغرفة",
-                                              style: TextStyle(
-                                                color: Color(0xff1C3677),
+                                            const    CustomText(text: "اسم الغرفة",
+                                                textColor: Color(0xff1C3677),
                                                 fontSize: 16,
                                                 fontWeight: FontWeight.w500,
-                                              ),),
+                                              ),
                                             const SizedBox(height: 10,),
                                             Row(
                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -319,25 +311,22 @@ class HotelsDetails extends StatelessWidget {
                                                   children:  [
                                                     SvgPicture.asset("assets/images/Vector (3).svg"),
                                                     const SizedBox(width: 12,),
-                                                    const Text("غير قابل للاسترداد",
-                                                      style: TextStyle(
-                                                        color: Color(0xffFF4471),
+                                                    const CustomText(text: "غير قابل للاسترداد",
+                                                        textColor: Color(0xffFF4471),
                                                         fontWeight: FontWeight.w500,
                                                         fontSize: 14,
-                                                      ),),
+                                                      ) ,
                                                   ],
                                                 ),
-
                                                 Row(
                                                   children: const [
                                                     Icon(Icons.check_circle_outline),
                                                     SizedBox(width: 12,),
-                                                    Text("شاملة اقامة وافطار",
-                                                      style: TextStyle(
-                                                        color: Color(0xff1E1E1E),
+                                                    CustomText(text: "شاملة اقامة وافطار",
+                                                        textColor: Color(0xff1E1E1E),
                                                         fontWeight: FontWeight.w500,
                                                         fontSize: 14,
-                                                      ),),
+                                                      ),
                                                   ],
                                                 ),
                                               ],
@@ -350,24 +339,22 @@ class HotelsDetails extends StatelessWidget {
                                                   children: const [
                                                     Icon(Icons.person_outline_outlined),
                                                     SizedBox(width: 12,),
-                                                    Text("أقصى عدد النزلاء 2",
-                                                      style: TextStyle(
-                                                        color: Color(0xff1E1E1E),
+                                                    CustomText(text:"أقصى عدد النزلاء 2",
+                                                        textColor: Color(0xff1E1E1E),
                                                         fontWeight: FontWeight.w500,
                                                         fontSize: 14,
-                                                      ),),
+                                                      ),
                                                   ],
                                                 ),
                                                 Row(
                                                   children: const [
                                                     Icon(Icons.check_circle_outline),
                                                     SizedBox(width: 12,),
-                                                    Text("35 م",
-                                                      style: TextStyle(
-                                                        color: Color(0xff1E1E1E),
+                                                    CustomText(text: "35 م",
+                                                        textColor: Color(0xff1E1E1E),
                                                         fontWeight: FontWeight.w500,
                                                         fontSize: 14,
-                                                      ),),
+                                                      ),
                                                   ],
                                                 ),
                                               ],
@@ -377,12 +364,11 @@ class HotelsDetails extends StatelessWidget {
                                               children: const [
                                                 Icon(Icons.list_alt),
                                                 SizedBox(width: 12,),
-                                                Text("تفاصيل الغرفة",
-                                                  style: TextStyle(
-                                                    color: Color(0xff1E1E1E),
+                                                CustomText(text: "تفاصيل الغرفة",
+                                                    textColor: Color(0xff1E1E1E),
                                                     fontWeight: FontWeight.w500,
                                                     fontSize: 14,
-                                                  ),),
+                                              ),
                                               ],
                                             ),
                                             const SizedBox(height: 10,),
@@ -393,16 +379,14 @@ class HotelsDetails extends StatelessWidget {
                                             Padding(padding:const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
                                               child:  Row(
                                                 children: [
-                                                  const  Text("4 ليالي - 230 \$",
-                                                    style: TextStyle(
-                                                      color: Color(0xff1E1E1E),
+                                                  const  CustomText(text: "4 ليالي - 230 \$",
+                                                      textColor: Color(0xff1E1E1E),
                                                       fontSize: 16,
                                                       fontWeight: FontWeight.w500,
-                                                    ),),
+                                                    ),
                                                   const   Spacer(),
                                                   Row(
                                                     children: [
-
                                                       Container(
                                                         height: 24,
                                                         width: 24,
@@ -418,11 +402,10 @@ class HotelsDetails extends StatelessWidget {
                                                           color: Color(0xffFFFFFF),)),
                                                       ),
                                                       const SizedBox(width: 13,),
-                                                      const Text("2",
-                                                        style: TextStyle(
-                                                          fontSize: 14,
+                                                      const CustomText(text: "2",
+                                                        fontSize: 14,
                                                           fontWeight: FontWeight.w500,
-                                                        ),),
+                                                       ),
                                                       const SizedBox(width: 13,),
                                                       Container(
                                                         height: 24,
@@ -534,17 +517,16 @@ class HotelsDetails extends StatelessWidget {
                                         children: [
                                           SvgPicture.asset("assets/images/Vector (12).svg"),
                                           const  SizedBox(width: 14,),
-                                          const Text("طريق الشيخ زايد - المركز التجاري",
-                                            style: TextStyle(
+                                          const CustomText(text: "طريق الشيخ زايد - المركز التجاري",
                                               fontWeight:FontWeight.w500 ,
-                                              color: Color(0xff1C3677),
+                                              textColor: Color(0xff1C3677),
                                               fontSize: 16,
-                                            ),),
+                                          ),
 
                                         ],
                                       ),
                                       const  SizedBox(height: 14,),
-                                      const Text(
+                                      const CustomText(text:
                                         "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة"
                                             "، لقد تم توليد هذا النص من مولد النص العربى،"
                                             " حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص "
@@ -554,13 +536,12 @@ class HotelsDetails extends StatelessWidget {
                                             " مقسما ولا يحوي أخطاء لغوية، مولد النص العربى مفيد "
                                             "لمصممي المواقع على وجه الخصوص، حيث يحتاج العميل"
                                             " فى كثير من الأحيان أن يطلع على صورة حقيقية لتصميم الموقع.",
-                                        style: TextStyle(
-                                          color: Color(0xff1E1E1E),
+
+                                          textColor: Color(0xff1E1E1E),
                                           fontSize:14 ,
                                           fontWeight:FontWeight.w500 ,
-                                        ),
                                         maxLines: 6,
-                                        overflow: TextOverflow.ellipsis,
+                                        textOverflow: TextOverflow.ellipsis,
                                       ),
                                     ],
                                   ),
@@ -569,12 +550,11 @@ class HotelsDetails extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 24,),
-                          const Text("محتويات الفندق",
-                            style: TextStyle(
-                              color:  Color(0xff1E1E1E),
+                          const CustomText(text: "محتويات الفندق",
+                              textColor:  Color(0xff1E1E1E),
                               fontSize:16 ,
                               fontWeight:FontWeight.w800 ,
-                            ),),
+                         ),
                           const SizedBox(height: 10,),
                           Container(
                             height: 170,
@@ -597,36 +577,33 @@ class HotelsDetails extends StatelessWidget {
                                         children: [
                                           SvgPicture.asset("assets/images/Vector (13).svg",height: 25,),
                                           const SizedBox(width: 8,),
-                                          const  Text("اسم الميزة",
-                                            style: TextStyle(
-                                              color: Color(0xff525252),
+                                          const  CustomText(text: "اسم الميزة",
+                                              textColor: Color(0xff525252),
                                               fontWeight: FontWeight.w500,
                                               fontSize: 18,
-                                            ),),
+                                         ),
                                         ],
                                       ),
                                       Row(
                                         children: [
                                           SvgPicture.asset("assets/images/Vector (14).svg",height: 25,),
                                           const SizedBox(width: 8,),
-                                          const  Text("اسم الميزة",
-                                            style: TextStyle(
-                                              color: Color(0xff525252),
+                                          const  CustomText(text: "اسم الميزة",
+                                              textColor: Color(0xff525252),
                                               fontWeight: FontWeight.w500,
                                               fontSize: 18,
-                                            ),),
+                                            ),
                                         ],
                                       ),
                                       Row(
                                         children: [
                                           SvgPicture.asset("assets/images/Vector (15).svg",height: 25),
                                           const SizedBox(width: 8,),
-                                          const  Text("اسم الميزة",
-                                            style: TextStyle(
-                                              color: Color(0xff525252),
+                                          const  CustomText(text: "اسم الميزة",
+                                              textColor: Color(0xff525252),
                                               fontWeight: FontWeight.w500,
                                               fontSize: 18,
-                                            ),),
+                                          ),
                                         ],
                                       ),
                                     ],
@@ -638,36 +615,33 @@ class HotelsDetails extends StatelessWidget {
                                         children: [
                                           SvgPicture.asset("assets/images/Vector (16).svg",height: 25),
                                           const SizedBox(width: 8,),
-                                          const  Text("اسم الميزة",
-                                            style: TextStyle(
-                                              color: Color(0xff525252),
+                                          const  CustomText(text: "اسم الميزة",
+                                              textColor: Color(0xff525252),
                                               fontWeight: FontWeight.w500,
                                               fontSize: 18,
-                                            ),),
+                                        ),
                                         ],
                                       ),
                                       Row(
                                         children: [
                                           SvgPicture.asset("assets/images/Vector (17).svg",height: 25),
                                           const SizedBox(width: 8,),
-                                          const  Text("اسم الميزة",
-                                            style: TextStyle(
-                                              color: Color(0xff525252),
+                                          const  CustomText(text: "اسم الميزة",
+                                              textColor: Color(0xff525252),
                                               fontWeight: FontWeight.w500,
                                               fontSize: 18,
-                                            ),),
+                                         ),
                                         ],
                                       ),
                                       Row(
                                         children: [
                                           SvgPicture.asset("assets/images/Vector (18).svg",height: 25),
                                           const SizedBox(width: 8,),
-                                          const  Text("اسم الميزة",
-                                            style: TextStyle(
-                                              color: Color(0xff525252),
+                                          const  CustomText(text: "اسم الميزة",
+                                              textColor: Color(0xff525252),
                                               fontWeight: FontWeight.w500,
                                               fontSize: 18,
-                                            ),),
+                                          ),
                                         ],
                                       ),
                                     ],

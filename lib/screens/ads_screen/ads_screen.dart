@@ -52,7 +52,7 @@ import 'ads_widgets/build_ads_widget.dart';
                 ),
               ],
             ),
-            backgroundColor:const Color(0xffFFFFFF) ,
+            backgroundColor:AppColors.mainColorWhite ,
             body: Padding(
               padding:const EdgeInsets.all(20),
               child: ListView.separated(

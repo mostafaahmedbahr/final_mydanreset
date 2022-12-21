@@ -85,13 +85,11 @@ class _RoomDetailsState extends State<RoomDetails> {
                               borderRadius:
                               BorderRadius.circular(15),
                               color: const Color(0xffD2C0B2)),
-                          child: Text(
-                            '${current + 1}/${imagesSlider.length}',
-                            style:const TextStyle(
+                          child: CustomText(
+                            text: '${current + 1}/${imagesSlider.length}',
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
-                              color: Colors.white,
-                            ),
+                              textColor: Colors.white,
                           ),
                         ),
 
@@ -157,12 +155,11 @@ class _RoomDetailsState extends State<RoomDetails> {
                             children: const [
                               Icon(Icons.bed_outlined,size: 30,),
                               SizedBox(width: 10,),
-                              Text("غرفة نوم",
-                                style: TextStyle(
-                                  color: Color(0xff1E1E1E),
+                              CustomText(text: "غرفة نوم",
+                                  textColor: AppColors.mainColorBlack,
                                   fontSize: 14,
                                   fontWeight: FontWeight.w800,
-                                ),),
+                              ),
                             ],
                           ),
                           const  SizedBox(height: 10,),
@@ -170,14 +167,13 @@ class _RoomDetailsState extends State<RoomDetails> {
                             padding: const EdgeInsets.symmetric(horizontal:35 ),
                             child: Row(
                               children: const [
-                                Icon(Icons.check_circle_outline,color: Color(0xff27B87F)),
+                                Icon(Icons.check_circle_outline,color: AppColors.mainColorGreen),
                                   SizedBox(width: 10,),
-                                Text("مكتب",
-                                style: TextStyle(
-                                  color: Color(0xff525252),
+                                CustomText(text: "مكتب",
+                                  textColor: AppColors.darkGrey,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 14,
-                                ),),
+                               ),
                               ],
                             ),
                           ),
@@ -186,14 +182,13 @@ class _RoomDetailsState extends State<RoomDetails> {
                             padding: const EdgeInsets.symmetric(horizontal:35 ),
                             child: Row(
                               children: const [
-                                Icon(Icons.check_circle_outline,color: Color(0xff27B87F)),
+                                Icon(Icons.check_circle_outline,color: AppColors.mainColorGreen),
                                   SizedBox(width: 10,),
-                                Text("مكتب",
-                                  style: TextStyle(
-                                    color: Color(0xff525252),
+                                CustomText(text: "مكتب",
+                                    textColor: AppColors.darkGrey,
                                     fontWeight: FontWeight.w500,
                                     fontSize: 14,
-                                  ),),
+                             ),
                               ],
                             ),
                           ),
@@ -206,12 +201,11 @@ class _RoomDetailsState extends State<RoomDetails> {
                             children: const [
                               Icon(Icons.bathtub_outlined,size: 30,),
                               SizedBox(width: 10,),
-                              Text("الحمام",
-                                style: TextStyle(
-                                  color: Color(0xff1E1E1E),
+                              CustomText(text: "الحمام",
+                                  textColor: AppColors.mainColorBlack,
                                   fontSize: 14,
                                   fontWeight: FontWeight.w800,
-                                ),),
+                               ),
                             ],
                           ),
                           const  SizedBox(height: 10,),
@@ -219,14 +213,13 @@ class _RoomDetailsState extends State<RoomDetails> {
                             padding: const EdgeInsets.symmetric(horizontal:35 ),
                             child: Row(
                               children: const [
-                                Icon(Icons.check_circle_outline,color: Color(0xff27B87F)),
+                                Icon(Icons.check_circle_outline,color: AppColors.mainColorGreen),
                                 SizedBox(width: 10,),
-                                Text("مكتب",
-                                  style: TextStyle(
-                                    color: Color(0xff525252),
+                                CustomText(text: "مكتب",
+                                    textColor: AppColors.darkGrey,
                                     fontWeight: FontWeight.w500,
                                     fontSize: 14,
-                                  ),),
+                                  ),
                               ],
                             ),
                           ),
@@ -235,14 +228,13 @@ class _RoomDetailsState extends State<RoomDetails> {
                             padding: const EdgeInsets.symmetric(horizontal:35 ),
                             child: Row(
                               children: const [
-                                Icon(Icons.check_circle_outline,color: Color(0xff27B87F)),
+                                Icon(Icons.check_circle_outline,color:AppColors.mainColorGreen),
                                 SizedBox(width: 10,),
-                                Text("مكتب",
-                                  style: TextStyle(
-                                    color: Color(0xff525252),
+                                CustomText(text: "مكتب",
+                                    textColor: AppColors.darkGrey,
                                     fontWeight: FontWeight.w500,
                                     fontSize: 14,
-                                  ),),
+                                  ),
                               ],
                             ),
                           ),
@@ -256,12 +248,11 @@ class _RoomDetailsState extends State<RoomDetails> {
                             children: const [
                               Icon(Icons.phonelink_lock_sharp,size: 30,),
                               SizedBox(width: 10,),
-                              Text("وسائل الترفيه",
-                                style: TextStyle(
-                                  color: Color(0xff1E1E1E),
+                              CustomText(text: "وسائل الترفيه",
+                                  textColor: AppColors.mainColorBlack,
                                   fontSize: 14,
                                   fontWeight: FontWeight.w800,
-                                ),),
+                               ),
                             ],
                           ),
                           const  SizedBox(height: 10,),
@@ -269,14 +260,13 @@ class _RoomDetailsState extends State<RoomDetails> {
                             padding: const EdgeInsets.symmetric(horizontal:35 ),
                             child: Row(
                               children: const [
-                                Icon(Icons.check_circle_outline,color: Color(0xff27B87F)),
+                                Icon(Icons.check_circle_outline,color: AppColors.mainColorGreen),
                                 SizedBox(width: 10,),
-                                Text("مكتب",
-                                  style: TextStyle(
-                                    color: Color(0xff525252),
+                                CustomText(text: "مكتب",
+                                    textColor: AppColors.darkGrey,
                                     fontWeight: FontWeight.w500,
                                     fontSize: 14,
-                                  ),),
+                                   ),
                               ],
                             ),
                           ),
@@ -285,14 +275,13 @@ class _RoomDetailsState extends State<RoomDetails> {
                             padding: const EdgeInsets.symmetric(horizontal:35 ),
                             child: Row(
                               children: const [
-                                Icon(Icons.check_circle_outline,color: Color(0xff27B87F)),
+                                Icon(Icons.check_circle_outline,color: AppColors.mainColorGreen),
                                 SizedBox(width: 10,),
-                                Text("مكتب",
-                                  style: TextStyle(
-                                    color: Color(0xff525252),
+                                CustomText(text: "مكتب",
+                                    textColor: AppColors.darkGrey,
                                     fontWeight: FontWeight.w500,
                                     fontSize: 14,
-                                  ),),
+                                  ),
                               ],
                             ),
                           ),
@@ -305,12 +294,12 @@ class _RoomDetailsState extends State<RoomDetails> {
                             children: const [
                               Icon(Icons.info_outlined,size: 30,),
                               SizedBox(width: 10,),
-                              Text("اخرى",
-                                style: TextStyle(
-                                  color: Color(0xff1E1E1E),
+                              CustomText(text: "اخرى",
+
+                                  textColor: AppColors.mainColorBlack,
                                   fontSize: 14,
                                   fontWeight: FontWeight.w800,
-                                ),),
+                                ),
                             ],
                           ),
                           const  SizedBox(height: 10,),
@@ -318,14 +307,13 @@ class _RoomDetailsState extends State<RoomDetails> {
                             padding: const EdgeInsets.symmetric(horizontal:35 ),
                             child: Row(
                               children: const [
-                                Icon(Icons.check_circle_outline,color: Color(0xff27B87F)),
+                                Icon(Icons.check_circle_outline,color: AppColors.mainColorGreen),
                                 SizedBox(width: 10,),
-                                Text("مكتب",
-                                  style: TextStyle(
-                                    color: Color(0xff525252),
+                                CustomText(text: "مكتب",
+                                    textColor: AppColors.darkGrey,
                                     fontWeight: FontWeight.w500,
                                     fontSize: 14,
-                                  ),),
+                                  ),
                               ],
                             ),
                           ),
@@ -334,14 +322,13 @@ class _RoomDetailsState extends State<RoomDetails> {
                             padding: const EdgeInsets.symmetric(horizontal:35 ),
                             child: Row(
                               children: const [
-                                Icon(Icons.check_circle_outline,color: Color(0xff27B87F)),
+                                Icon(Icons.check_circle_outline,color: AppColors.mainColorGreen),
                                 SizedBox(width: 10,),
-                                Text("مكتب",
-                                  style: TextStyle(
-                                    color: Color(0xff525252),
+                                CustomText(text: "مكتب",
+                                    textColor:AppColors.darkGrey,
                                     fontWeight: FontWeight.w500,
                                     fontSize: 14,
-                                  ),),
+                                  ),
                               ],
                             ),
                           ),

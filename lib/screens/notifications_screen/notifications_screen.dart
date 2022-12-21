@@ -45,117 +45,87 @@ class NotificationsScreen extends StatelessWidget {
                   itemBuilder: (context,index){
                 return  SizedBox(
                   width: double.infinity,
-                  height: 150,
+                  height: 120,
                   child: Stack(
                     alignment: Alignment.topRight,
                     children: [
-
-                      ClipRRect(
-                        borderRadius: const BorderRadius.all(Radius.circular(16)),
-                        child: SizedBox(
-                          width: 600,
-                          height: 200,
-                          child: Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              /// background image
-                              Container(
-                                color: Colors.deepPurple,
-                              ),
-                              CustomPaint(
-                                painter: CardPaint(),
-                                size: const Size(600, 200),
-                              ),
-                            ],
+                      ClipPath(
+                        clipper: const CustomCornerClipPath(),
+                        child: Container(
+                          height: double.infinity, //based on your need
+                            width: 120,
+                          decoration: BoxDecoration(
+                            color: AppColors.mainColorWhite,
+                            borderRadius: const BorderRadius.only(
+                              topRight:    Radius.circular(10) ,
+                              topLeft: Radius.circular(10) ,
+                              bottomLeft:Radius.circular(10) ,
+                            ),
+                            border: Border.all(
+                              color: AppColors.secondColorWhite
+                            ),
                           ),
+                          child: RotatedBox(
+                            quarterTurns: 1,
+                            child: Text("دقل ،ةحاسملا سفن يف لدبتسي نأ نكمي صنل لاثم وه صنلا اذه ،ىبرعلا صنلا دلوم نم صنلا اذه ديلوت مت دقل ،ةحاسملا سفن يف لدبتسي نأ نكمي صنل لاثم وه صنلا اذه ،ىبرعلا صنلا دلوم نم صنلا اذه ديلوت متدقل ،ةحاسملا سفن يف لدبتسي نأ نكمي صنل لاثم وه صنلا اذه ،ىبرعلا صنلا دلوم نم صنلا اذه ديلوت متدقل ،ةحاسملا سفن يف لدبتسي نأ نكمي صنل لاثم وه صنلا اذه ،ىبرعلا صنلا دلوم نم صنلا اذه ديلوت مت دقل ،ةحاسملا سفن يف لدبتسي نأ نكمي صنل لاثم وه صنلا اذه ،ىبرعلا صنلا دلوم نم صنلا اذه ديلوت مت دقل ،ةحاسملا سفن يف لدبتسي نأ نكمي صنل لاثم وه صنلا اذه ،ىبرعلا صنلا دلوم نم صنلا اذه ديلوت مت "),
+                          )
                         ),
                       ),
-
-                    //   Image.asset(
-                    //     'assets/images/subtract.png',
-                    //     width: double.infinity,
-                    //     height: 150,
-                    //   ),
-                    //   Padding(padding: const EdgeInsets.all(20),
-                    //   child:  Column(
-                    //     children: [
-                    //       Row(
-                    //         crossAxisAlignment: CrossAxisAlignment.start,
-                    //         children:const [
-                    //           CustomText(text: "طلب جديد",
-                    //             fontWeight: FontWeight.w800,
-                    //             fontSize: 14,
-                    //             textColor: AppColors.mainColorBlack,
-                    //           ),
-                    //           Spacer(),
-                    //           CustomText(text: "1 د"),
-                    //
-                    //         ],
-                    //       ),
-                    //       Container(
-                    //        margin:const EdgeInsets.symmetric(vertical: 10),
-                    //         constraints:const BoxConstraints(
-                    //           minWidth: double.infinity,
-                    //           minHeight: 50,
-                    //           maxWidth: double.infinity,
-                    //           maxHeight: 60,
-                    //         ),
-                    //         child: const  CustomText(text: "دقل ،ةحاسملا سفن يف لدبتسي نأ نكمي صنل لاثم وه صنلا اذه ،ىبرعلا صنلا دلوم نم صنلا اذه ديلوت متدقل ،ةحاسملا سفن يف لدبتسي نأ نكمي صنل لاثم وه صنلا اذه ،ىبرعلا صنلا دلوم نم صنلا اذه ديلوت متدقل ،ةحاسملا سفن يف لدبتسي نأ نكمي صنل لاثم وه صنلا اذه ،ىبرعلا صنلا دلوم نم صنلا اذه ديلوت متدقل ،ةحاسملا سفن يف لدبتسي نأ نكمي صنل لاثم وه صنلا اذه ،ىبرعلا صنلا دلوم نم صنلا اذه ديلوت متدقل ،ةحاسملا سفن يف لدبتسي نأ نكمي صنل لاثم وه صنلا اذه ،ىبرعلا صنلا دلوم نم صنلا اذه ديلوت متدقل ،ةحاسملا سفن يف لدبتسي نأ ن ",
-                    //           fontWeight: FontWeight.w500,
-                    //           fontSize: 12,
-                    //           textOverflow: TextOverflow.ellipsis,
-                    //           maxLines: 2,
-                    //           textColor:AppColors.mainColorBlack ,
-                    //         ),
-                    //       ),
-                    //     ],
-                    //   ),
-                    //   ),
-                    //
-                    //
-                    // Positioned(
-                    //   top: 10,
-                    //   right: 3,
-                    //   child:   SizedBox(
-                    //   width: 8,
-                    //   height: 8,
-                    //   child: Container(
-                    //     decoration: BoxDecoration (
-                    //       borderRadius: BorderRadius.circular(4),
-                    //       color: Colors.red,
-                    //     ),
-                    //   ),
-                    // ),),
-
+                      Positioned(
+                        bottom: 112,
+                        right: 0,
+                        child:   SizedBox(
+                          width: 8,
+                          height: 8,
+                          child: Container(
+                            decoration: BoxDecoration (
+                              borderRadius: BorderRadius.circular(4),
+                              color: Colors.red,
+                            ),
+                          ),
+                        ),),
+                    
                     ],
                   ),
                 );
               }),
 
           ),
+
         ),
       ),
     );
   }
 
 }
-class CardPaint extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    Paint paint = Paint()..color = Colors.red;
 
-    Path path = Path()
-      ..lineTo(size.width * .3, -500)
-      ..lineTo(size.width , size.height * .2)
-      ..lineTo(size.width  , size.height)
-      ..lineTo(0, size.height)
-      ..lineTo(0, 0);
 
-    canvas.drawPath(path, paint);
-  }
+class CustomCornerClipPath extends CustomClipper<Path> {
+  final double cornerR;
+  const CustomCornerClipPath({this.cornerR = 10.0});
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return false;
-  }
+  Path getClip(Size size) => Path()
+    ..lineTo(size.width, 0)
+    ..lineTo(
+      size.width,
+      size.height - cornerR,
+    )
+    ..arcToPoint(
+      Offset(
+        size.width - cornerR,
+        size.height,
+      ),
+      radius: Radius.circular(cornerR),
+      clockwise: false,
+    )
+    ..lineTo(0, size.height);
+
+  @override
+  bool shouldReclip(covariant CustomClipper<Path> oldClipper) => false;
 }
+
+
+
+
+

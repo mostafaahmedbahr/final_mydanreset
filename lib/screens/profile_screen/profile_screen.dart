@@ -8,6 +8,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
  import 'package:flutter_svg/svg.dart';
  import 'package:get/get.dart';
 
+import '../../widgets/custom_app_bar.dart';
 import '../../widgets/custom_button.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -23,23 +24,25 @@ class ProfileScreen extends StatelessWidget {
             textDirection: TextDirection.rtl,
             child: Scaffold(
               backgroundColor:AppColors.mainColorWhite ,
-              appBar: AppBar(
-                backgroundColor:AppColors.mainColorWhite ,
-                elevation: 0,
-                title: const Text("البروفايل",
-                  style: TextStyle(
-                    color: Color(0xff1E1E1E),
-                    fontSize: 20,
-                    fontWeight: FontWeight.w900,
-                  ),),
+              appBar: CustomAppBar(
                 centerTitle: true,
-                leading: IconButton(
-                  onPressed: (){
+                appBarToolbarHeight: 70,
+                automaticallyLeading: true,
+                appBarBackgroundColor: AppColors.mainColorWhite,
+                appElevation: 0,
+                leadingWidget: IconButton(
+                  onPressed: () {
                     Get.back();
                   },
                   icon: SvgPicture.asset("assets/images/Vector.svg"),
                 ),
+                titleContent: const CustomText(
+                  text: "البروفايل",
+                    textColor: AppColors.mainColorBlack,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w900,
 
+                ),
               ),
               body: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 40),
@@ -107,7 +110,7 @@ class ProfileScreen extends StatelessWidget {
                         text: "البريد الالكترونى",
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
-                        textColor : Color(0xff525252),
+                        textColor : AppColors.darkGrey,
                       ),
                       TextFormField(
                         decoration: InputDecoration(
@@ -139,7 +142,7 @@ class ProfileScreen extends StatelessWidget {
                         text: "رقم الموبايل",
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
-                        textColor : Color(0xff525252),
+                        textColor : AppColors.darkGrey,
                       ),
                       TextFormField(
                         decoration: InputDecoration(
@@ -148,7 +151,7 @@ class ProfileScreen extends StatelessWidget {
                           contentPadding:const EdgeInsets.symmetric(vertical: 8,horizontal: 16),
                           hintText: "598696102",
                           hintStyle:const TextStyle(
-                            color: Color(0xff1E1E1E),
+                            color: AppColors.mainColorBlack,
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
                           ),
@@ -156,7 +159,7 @@ class ProfileScreen extends StatelessWidget {
                             padding: EdgeInsets.symmetric(vertical: 12),
                             child:  Text("+970",
                               style: TextStyle(
-                                color: Color(0xff1E1E1E),
+                                color: AppColors.mainColorBlack,
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
                               ),),
@@ -180,7 +183,7 @@ class ProfileScreen extends StatelessWidget {
                         text: "تاريخ الميلاد",
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
-                        textColor : Color(0xff525252),
+                        textColor : AppColors.darkGrey,
                       ),
                       TextFormField(
                         decoration: InputDecoration(
@@ -189,11 +192,11 @@ class ProfileScreen extends StatelessWidget {
                           contentPadding:const EdgeInsets.symmetric(vertical: 8,horizontal: 16),
                           hintText: "2022/10/08",
                           hintStyle:const TextStyle(
-                            color: Color(0xff1E1E1E),
+                            color: AppColors.mainColorBlack,
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
                           ),
-                          suffixIcon: const  Icon(IconlyLight.arrowDown2,color: Color(0xff1E1E1E),),
+                          suffixIcon: const  Icon(IconlyLight.arrowDown2,color: AppColors.mainColorBlack,),
                           enabledBorder: OutlineInputBorder(
                             borderSide: const BorderSide(
                               width: 1, color: Colors.grey,
@@ -213,7 +216,7 @@ class ProfileScreen extends StatelessWidget {
                         text: "الجنسية",
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
-                        textColor : Color(0xff525252),
+                        textColor : AppColors.darkGrey,
                       ),
                       TextFormField(
                         decoration: InputDecoration(
@@ -222,11 +225,11 @@ class ProfileScreen extends StatelessWidget {
                           contentPadding:const EdgeInsets.symmetric(vertical: 8,horizontal: 16),
                           hintText: "مصر",
                           hintStyle:const TextStyle(
-                            color: Color(0xff1E1E1E),
+                            color: AppColors.mainColorBlack,
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
                           ),
-                          suffixIcon: const  Icon(IconlyLight.arrowDown2,color: Color(0xff1E1E1E),),
+                          suffixIcon: const  Icon(IconlyLight.arrowDown2,color: AppColors.mainColorBlack,),
                           enabledBorder: OutlineInputBorder(
                             borderSide: const BorderSide(
                               width: 1, color: Colors.grey,
@@ -246,7 +249,7 @@ class ProfileScreen extends StatelessWidget {
                         text: "المنطقة",
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
-                        textColor : Color(0xff525252),
+                        textColor : AppColors.darkGrey,
                       ),
                       TextFormField(
                         decoration: InputDecoration(
@@ -255,11 +258,11 @@ class ProfileScreen extends StatelessWidget {
                           contentPadding:const EdgeInsets.symmetric(vertical: 8,horizontal: 16),
                           hintText: "المهندسين",
                           hintStyle:const TextStyle(
-                            color: Color(0xff1E1E1E),
+                            color: AppColors.mainColorBlack,
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
                           ),
-                          suffixIcon: const  Icon(IconlyLight.arrowDown2,color: Color(0xff1E1E1E),),
+                          suffixIcon: const  Icon(IconlyLight.arrowDown2,color: AppColors.mainColorBlack,),
                           enabledBorder: OutlineInputBorder(
                             borderSide: const BorderSide(
                               width: 1, color: Colors.grey,
@@ -279,7 +282,7 @@ class ProfileScreen extends StatelessWidget {
                         text: "العنوان",
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
-                        textColor : Color(0xff525252),
+                        textColor : AppColors.darkGrey,
                       ),
                       TextFormField(
                         decoration: InputDecoration(
@@ -288,11 +291,11 @@ class ProfileScreen extends StatelessWidget {
                           contentPadding:const EdgeInsets.symmetric(vertical: 8,horizontal: 16),
                           hintText: "ميت عقبه - شارع وادي النيل",
                           hintStyle:const TextStyle(
-                            color: Color(0xff1E1E1E),
+                            color:AppColors.mainColorBlack,
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
                           ),
-                          suffixIcon: const  Icon(IconlyLight.arrowDown2,color: Color(0xff1E1E1E),),
+                          suffixIcon: const  Icon(IconlyLight.arrowDown2,color: AppColors.mainColorBlack,),
                           enabledBorder: OutlineInputBorder(
                             borderSide: const BorderSide(
                               width: 1, color: Colors.grey,
@@ -312,7 +315,7 @@ class ProfileScreen extends StatelessWidget {
                         text: "الرمز البريدي",
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
-                        textColor : Color(0xff525252),
+                        textColor : AppColors.darkGrey,
                       ),
                       TextFormField(
                         decoration: InputDecoration(
@@ -321,11 +324,11 @@ class ProfileScreen extends StatelessWidget {
                           contentPadding:const EdgeInsets.symmetric(vertical: 8,horizontal: 16),
                           hintText: "1234",
                           hintStyle:const TextStyle(
-                            color: Color(0xff1E1E1E),
+                            color:AppColors.mainColorBlack,
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
                           ),
-                          suffixIcon: const  Icon(IconlyLight.arrowDown2,color: Color(0xff1E1E1E),),
+                          suffixIcon: const  Icon(IconlyLight.arrowDown2,color: AppColors.mainColorBlack,),
                           enabledBorder: OutlineInputBorder(
                             borderSide: const BorderSide(
                               width: 1, color: Colors.grey,

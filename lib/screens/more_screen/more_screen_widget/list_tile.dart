@@ -1,3 +1,5 @@
+import 'package:final_mydanreset/core/components/colors.dart';
+import 'package:final_mydanreset/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 class ListTileWidget extends StatelessWidget {
   const ListTileWidget({Key? key, required this.label, required this.onTap, required this.iconDataWidget, }) : super(key: key);
@@ -13,12 +15,11 @@ class ListTileWidget extends StatelessWidget {
         onTap();
       },
       leading: iconDataWidget,
-      title:  Text(label,
-        style:const TextStyle(
+      title:  CustomText(text: label,
           fontSize: 20,
           fontWeight: FontWeight.w500,
-        ),),
-      trailing:const Icon(Icons.arrow_back_ios_new, color:   Color(0xff1E1E1E)),
+       ),
+      trailing:const Icon(Icons.arrow_back_ios_new, color:  AppColors.mainColorBlack),
     );
   }
 }
