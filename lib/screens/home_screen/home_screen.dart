@@ -1,9 +1,9 @@
-import 'package:final_mydanreset/controller/home_controller.dart';
- import 'package:flutter/material.dart';
+  import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:get/get.dart';
 import 'package:page_transition/page_transition.dart';
 
+import '../../controller/customer_controller/home_controller.dart';
 import '../../core/components/colors.dart';
 import '../../widgets/custom_app_bar.dart';
 import '../notifications_screen/notifications_screen.dart';

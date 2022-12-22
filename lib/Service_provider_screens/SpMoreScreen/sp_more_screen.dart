@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
- import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:page_transition/page_transition.dart';
 
- import '../../controller/customer_controller/home_controller.dart';
+import '../../controller/customer_controller/home_controller.dart';
 import '../../core/components/colors.dart';
+import '../../screens/more_screen/more_screen_widget/divider_widget.dart';
+import '../../screens/more_screen/more_screen_widget/list_tile.dart';
+import '../../screens/profile_screen/profile_screen.dart';
 import '../../widgets/custom_app_bar.dart';
 import '../../widgets/custom_text.dart';
-import '../notifications_screen/notifications_screen.dart';
-import '../profile_screen/profile_screen.dart';
-import 'more_screen_widget/divider_widget.dart';
-import 'more_screen_widget/list_tile.dart';
-class MoreScreen extends GetView<HomeController> {
-    MoreScreen({Key? key}) : super(key: key);
+
+class SpMoreScreen extends GetView<HomeController> {
+  SpMoreScreen({Key? key}) : super(key: key);
   // var homeController = Get.put(HomeController());
   @override
   Widget build(BuildContext context) {
@@ -20,43 +20,7 @@ class MoreScreen extends GetView<HomeController> {
         child: Directionality(
           textDirection: TextDirection.rtl,
           child :  Scaffold(
-            appBar: CustomAppBar(
-              appBarToolbarHeight: 70,
-              automaticallyLeading: true,
-              appBarBackgroundColor: AppColors.mainColorWhite,
-              appElevation: 0,
-              leadingWidget:const Padding(
-                padding: EdgeInsets.only(right: 20),
-                child: CircleAvatar(
-                  backgroundImage: AssetImage("assets/images/img.png",),
-                  backgroundColor: Color(0xffFFFFFF),
-                  minRadius: 50,
-                  maxRadius: 75,
-                ),
-              ) ,
-              titleContent: const CustomText(text:"تسجيل الدخول",
-                  textColor: Color(0xff878787),
-                  fontSize: 17,
-                  fontWeight: FontWeight.bold,
-                ),
-              actionsWidgets: [
-                IconButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context, PageTransition(
-                        duration: const Duration(milliseconds: 400),
-                        reverseDuration: const Duration(milliseconds: 400),
-                        type: PageTransitionType.leftToRight,
-                        child: const NotificationsScreen(),
-                        inheritTheme: true,
-                        ctx: context));
-                  },
-                  icon: Image.asset("assets/images/img_11.png",
-                    height: 20,),
-                ),
-              ],
-            ),
-            backgroundColor:const Color(0xffFFFFFF) ,
+            backgroundColor:AppColors.mainColorWhite ,
             body:Padding(
               padding: const EdgeInsets.all(20.0),
               child: SingleChildScrollView(
@@ -151,7 +115,7 @@ class MoreScreen extends GetView<HomeController> {
                 ),
               ),
             ),
-    ) ,
+          ) ,
         ));
   }
 }

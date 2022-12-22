@@ -1,6 +1,5 @@
 
-import 'package:final_mydanreset/controller/profile_controller.dart';
-import 'package:final_mydanreset/core/components/colors.dart';
+ import 'package:final_mydanreset/core/components/colors.dart';
 import 'package:final_mydanreset/screens/profile_screen/profile_widgets/profile.dart';
 import 'package:final_mydanreset/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +7,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
  import 'package:flutter_svg/svg.dart';
  import 'package:get/get.dart';
 
+import '../../controller/customer_controller/profile_controller.dart';
 import '../../widgets/custom_app_bar.dart';
 import '../../widgets/custom_button.dart';
 

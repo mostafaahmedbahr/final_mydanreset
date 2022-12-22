@@ -1,44 +1,20 @@
-import 'package:final_mydanreset/Service_provider_screens/s_p_home_screen/widgets.dart';
-import 'package:final_mydanreset/widgets/custom_text.dart';
+import 'package:final_mydanreset/controller/s_p_controller/s_p_home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../core/components/colors.dart';
-import '../../widgets/custom_app_bar.dart';
+import 'package:get/get.dart';
 
-class ServiceProviderHomeScreen extends StatelessWidget {
-  const ServiceProviderHomeScreen({Key? key}) : super(key: key);
+import '../../core/components/colors.dart';
+import '../../widgets/custom_text.dart';
+import '../s_p_layout_screen/widgets.dart';
+class SpHomeScreen extends StatelessWidget {
+  const SpHomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Directionality(
-      textDirection: TextDirection.rtl,
-      child: Scaffold(
-        appBar: CustomAppBar(
-          appBarToolbarHeight: 70,
-          automaticallyLeading: true,
-          appBarBackgroundColor: AppColors.mainColorWhite,
-          appElevation: 0,
-          titleContent: const Text(
-            "Meydanrest",
-            style: TextStyle(
-              color: AppColors.mainColorBlack,
-              fontSize: 20,
-              fontWeight: FontWeight.w900,
-            ),
-          ),
-          actionsWidgets: [
-            IconButton(
-              onPressed: () {},
-              icon: Image.asset(
-                "assets/images/img_11.png",
-                height: 20,
-              ),
-            ),
-          ],
-        ),
-        backgroundColor: AppColors.mainColorWhite,
-        body: Padding(
+    return   GetBuilder<SpHomeController>(
+      init: SpHomeController(),
+      builder: (c){
+        return Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,7 +25,7 @@ class ServiceProviderHomeScreen extends StatelessWidget {
                   //<-- SEE HERE
                   fillColor: AppColors.mainColorWhite,
                   contentPadding:
-                      const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                  const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                   hintText: "اختر التاريخ",
                   hintStyle: const TextStyle(
                     color: AppColors.mainColorBlack,
@@ -135,27 +111,27 @@ class ServiceProviderHomeScreen extends StatelessWidget {
                 height: 10,
               ),
               Expanded(
-                child: ListView.builder(
+                child: ListView.separated(
+                  itemCount: 5,
+                  separatorBuilder: (context,index){
+                    return const SizedBox(height: 10,);
+                  },
                   itemBuilder: (context, index) {
-                    return Container(
-                      height: 100,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: AppColors.secondColorWhite,
-                        ),
-                        borderRadius: BorderRadius.circular(10),
-                        color: AppColors.mainColorBlack,
-                      ),
-
+                    return const BuildCustomCardOfReservation(
+                      date: "22 نوفمبر - 25 نوفمبر - نزيلان - غرفة",
+                      name: "مصطفى بحر" ,
+                      reservationNumber: "#236372",
+                      hour: "05:00 pm ",
+                      color: AppColors.secondColorGrey,
                     );
                   },
                 ),
               ),
             ],
           ),
-        ),
-      ),
-    ));
+        );
+      },
+
+    );
   }
 }

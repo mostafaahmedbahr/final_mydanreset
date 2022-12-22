@@ -5,7 +5,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
  import 'package:get/get.dart';
 import 'package:page_transition/page_transition.dart';
 
-import '../../controller/my_reservation_controller.dart';
+ import '../../controller/customer_controller/my_reservation_controller.dart';
 import '../../widgets/custom_app_bar.dart';
 import '../notifications_screen/notifications_screen.dart';
 import 'MyReservations_widgets/build_status_widget.dart';

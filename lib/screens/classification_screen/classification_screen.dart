@@ -5,7 +5,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-import '../../controller/Classification_controller.dart';
+ import '../../controller/customer_controller/Classification_controller.dart';
 import '../../core/components/colors.dart';
 import '../../widgets/custom_app_bar.dart';
 import '../../widgets/custom_button.dart';

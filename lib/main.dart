@@ -9,7 +9,7 @@ import 'package:final_mydanreset/screens/rooms_details_screen/room_details.dart'
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
- import 'Service_provider_screens/s_p_home_screen/s_p_home_screen.dart';
+ import 'Service_provider_screens/s_p_layout_screen/s_p_layout_screen.dart';
 import 'screens/classification_screen/classification_screen.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -26,9 +26,9 @@ class MyApp extends StatelessWidget {
     return   GetMaterialApp(
       theme: ThemeData(fontFamily: 'AvenirArabic'),
       debugShowCheckedModeBanner: false,
-      home:  const   Directionality(
+      home:    const  Directionality(
           textDirection: TextDirection.rtl,
-          child: ServiceProviderHomeScreen()),
+          child: ServiceProviderLayoutScreen()),
       builder: (context, child) => ResponsiveWrapper.builder(
         BouncingScrollWrapper.builder(context, child!),
         maxWidth: 1200,

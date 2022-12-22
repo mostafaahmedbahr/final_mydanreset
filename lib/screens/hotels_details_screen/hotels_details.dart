@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 import 'package:rate/rate.dart';
  import 'package:custom_full_image_screen/custom_full_image_screen.dart';
 
-import '../../controller/hotels_controller.dart';
+ import '../../controller/customer_controller/hotels_controller.dart';
 import '../../core/components/colors.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_text.dart';
