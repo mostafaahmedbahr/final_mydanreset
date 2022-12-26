@@ -7,14 +7,11 @@ import '../../controller/customer_controller/home_controller.dart';
 import '../../core/components/colors.dart';
 import '../../screens/more_screen/more_screen_widget/divider_widget.dart';
 import '../../screens/more_screen/more_screen_widget/list_tile.dart';
-import '../../screens/profile_screen/profile_screen.dart';
-import '../../widgets/custom_app_bar.dart';
-import '../../widgets/custom_text.dart';
+import '../sp_profile_screen/sp_profile_screen.dart';
 
 class SpMoreScreen extends GetView<HomeController> {
   SpMoreScreen({Key? key}) : super(key: key);
-  // var homeController = Get.put(HomeController());
-  @override
+   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Directionality(
@@ -66,7 +63,7 @@ class SpMoreScreen extends GetView<HomeController> {
                               duration: const Duration(milliseconds: 400),
                               reverseDuration: const Duration(milliseconds: 400),
                               type: PageTransitionType.leftToRight,
-                              child:   const ProfileScreen(),
+                              child:   const SpProfileScreen(),
                               inheritTheme: true,
                               ctx: context));
                         },

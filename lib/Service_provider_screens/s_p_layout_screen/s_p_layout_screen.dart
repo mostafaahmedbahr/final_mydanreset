@@ -36,7 +36,16 @@ class ServiceProviderLayoutScreen extends StatelessWidget {
               ),
               actionsWidgets: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    // Navigator.push(
+                    //     context, PageTransition(
+                    //     duration: const Duration(milliseconds: 400),
+                    //     reverseDuration: const Duration(milliseconds: 400),
+                    //     type: PageTransitionType.leftToRight,
+                    //     child: const NotificationsScreen(),
+                    //     inheritTheme: true,
+                    //     ctx: context));
+                  },
                   icon: Image.asset(
                     "assets/images/img_11.png",
                     height: 20,
