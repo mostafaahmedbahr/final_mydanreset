@@ -83,150 +83,59 @@ class SpRatingScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 20,),
-        Container(
-          padding: const EdgeInsets.all(10),
-          height: 130,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(26),
-            color:const  Color(0xffF5F4F8) ,
-          ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CircleAvatar(
-                backgroundImage: AssetImage("assets/images/img_2.png"),
-              ),
-              SizedBox(width: 10,),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const CustomText(text: "مصطفى بحر",
-                        fontSize: 14,
-                        fontWeight: FontWeight.w800,
-                        textColor: AppColors.mainColorBlack,
-                      ),
-                      SizedBox(width: 100,),
-                      Rate(
-                        iconSize: 20,
-                        color: const Color(0xffFFC700),
-                        allowHalf: true,
-                        allowClear: true,
-                        initialValue: 3.5,
-                        readOnly: false,
-                        onChange: (  value) => print(value),
-                      ),
-                    ],
-                  ),
-                  Text("دقل ،ةحاسملا سفن يف لدبتسي نأ نكمي صنل ل ت مت"),
-                  CustomText(text: "12 Days "),
-                ],
-              ),
+        ListView.builder(
+            itemCount: 10,
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemBuilder: (context,index){
+          return Container(
+            padding: const EdgeInsets.all(10),
+            height: 130,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(26),
+              color:const  Color(0xffF5F4F8) ,
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CircleAvatar(
+                  backgroundImage: AssetImage("assets/images/img_2.png"),
+                ),
+                SizedBox(width: 10,),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const CustomText(text: "مصطفى بحر",
+                          fontSize: 14,
+                          fontWeight: FontWeight.w800,
+                          textColor: AppColors.mainColorBlack,
+                        ),
+                        SizedBox(width: 100,),
+                        Rate(
+                          iconSize: 20,
+                          color: const Color(0xffFFC700),
+                          allowHalf: true,
+                          allowClear: true,
+                          initialValue: 3.5,
+                          readOnly: false,
+                          onChange: (  value) => print(value),
+                        ),
+                      ],
+                    ),
+                    Text("دقل ،ةحاسملا سفن يف لدبتسي نأ نكمي صنل ل ت مت"),
+                    CustomText(text: "12 Days "),
+                  ],
+                ),
 
-            ],
-          ),
-        ),
-        const SizedBox(height: 20,),
-        Container(
-          padding: const EdgeInsets.all(10),
-          height: 130,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(26),
-            color:const  Color(0xffF5F4F8) ,
-          ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CircleAvatar(
-                backgroundImage: AssetImage("assets/images/img_2.png"),
-              ),
-              SizedBox(width: 10,),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const CustomText(text: "مصطفى بحر",
-                        fontSize: 14,
-                        fontWeight: FontWeight.w800,
-                        textColor: AppColors.mainColorBlack,
-                      ),
-                      SizedBox(width: 100,),
-                      Rate(
-                        iconSize: 20,
-                        color: const Color(0xffFFC700),
-                        allowHalf: true,
-                        allowClear: true,
-                        initialValue: 3.5,
-                        readOnly: false,
-                        onChange: (  value) => print(value),
-                      ),
-                    ],
-                  ),
-                  Text("دقل ،ةحاسملا سفن يف لدبتسي نأ نكمي صنل ل ت مت"),
-                  CustomText(text: "12 Days "),
-                ],
-              ),
-
-            ],
-          ),
-        ),
-        const SizedBox(height: 20,),
-        Container(
-          padding: const EdgeInsets.all(10),
-          height: 130,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(26),
-            color:const  Color(0xffF5F4F8) ,
-          ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CircleAvatar(
-                backgroundImage: AssetImage("assets/images/img_2.png"),
-              ),
-              SizedBox(width: 10,),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const CustomText(text: "مصطفى بحر",
-                        fontSize: 14,
-                        fontWeight: FontWeight.w800,
-                        textColor: AppColors.mainColorBlack,
-                      ),
-                      SizedBox(width: 100,),
-                      Rate(
-                        iconSize: 20,
-                        color: const Color(0xffFFC700),
-                        allowHalf: true,
-                        allowClear: true,
-                        initialValue: 3.5,
-                        readOnly: false,
-                        onChange: (  value) => print(value),
-                      ),
-                    ],
-                  ),
-                  Text("دقل ،ةحاسملا سفن يف لدبتسي نأ نكمي صنل ل ت مت"),
-                  CustomText(text: "12 Days "),
-                ],
-              ),
-
-            ],
-          ),
-        ),
-        const SizedBox(height: 80,),
+              ],
+            ),
+          );
+        }),
         CustomButton(
             height: 50,
             width: double.infinity,

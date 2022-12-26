@@ -1,4 +1,5 @@
- import 'package:final_mydanreset/screens/hotels_details_screen/hotels_details.dart';
+ import 'package:final_mydanreset/screens/TouristGroups/tourist_groups_main_screen/tourist_groups_main_screen.dart';
+import 'package:final_mydanreset/screens/hotels_details_screen/hotels_details.dart';
 import 'package:final_mydanreset/screens/hotels_screen/hotels_widgets/main_part_widget.dart';
  import 'package:final_mydanreset/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +40,6 @@ class _HotelsScreenState extends State<HotelsScreen> {
   Widget build(BuildContext context) {
     return  SafeArea(
       child: Scaffold(
-
       body: NotificationListener<OverscrollIndicatorNotification>(
         onNotification: (overScroll)
         {
@@ -150,14 +150,19 @@ class _HotelsScreenState extends State<HotelsScreen> {
                         const SizedBox(height: 10,),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children:const [
+                          children: [
                             MainPartWidget(
                               text: "شقق مفروشه",
                               image: "assets/images/img_7.png",
                             ),
-                            MainPartWidget(
-                              text: "قروبات سياحية",
-                              image: "assets/images/Vector.png",
+                            InkWell(
+                              onTap: (){
+                                Get.to(()=>TouristGroupsMainScreen());
+                              },
+                              child: MainPartWidget(
+                                text: "قروبات سياحية",
+                                image: "assets/images/Vector.png",
+                              ),
                             ),
                           ],
                         ),

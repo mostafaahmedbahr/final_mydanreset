@@ -1,4 +1,5 @@
 import 'package:final_mydanreset/screens/more_screen/more_screen.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../Service_provider_screens/AdRoomScreen/add_room_screen.dart';
@@ -15,12 +16,14 @@ class SpHomeController extends GetxController
     update();
   }
 
+  final PageStorageBucket bucket = PageStorageBucket();
+  Widget currentScreen = const SpHomeScreen();
   List screens = [
     const SpHomeScreen(),
     const SpReserveScreen(),
-    const AddRoomScreen(),
+    // const AddRoomScreen(),
     const SpOffersScreen(),
-      SpMoreScreen(),
+    SpMoreScreen(),
     // SpMoreScreen(),
   ];
 

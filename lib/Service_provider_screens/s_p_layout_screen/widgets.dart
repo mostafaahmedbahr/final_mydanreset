@@ -178,7 +178,7 @@ final Color color;
               ),
               child:  const  Center(
                 child: CustomText(
-                  text: "1000",
+                  text: "100",
                   maxLines: 1,
                   textOverflow: TextOverflow.ellipsis,
                   textColor: AppColors.mainColorWhite,

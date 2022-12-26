@@ -44,43 +44,43 @@ class SpProfileScreen extends StatelessWidget {
 
                 ),
               ),
-              body:   Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      height: 56,
-                      width: double.infinity,
-                      color: const Color(0xff06B3C4),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            BuildStatusWidget(
-                              text: "البيانات الشخصية",
-                              color: spProfileCon.pageIndex==1 ? AppColors.hoverMainColor : AppColors.mainColor,
-                              onTap: (){
-                                spProfileCon.changeIndex(spProfileCon.pageIndex=1);
-                                print(spProfileCon.pageIndex);
-                              },
-                            ),
+              body:   SingleChildScrollView(
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: 56,
+                        width: double.infinity,
+                        color: const Color(0xff06B3C4),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              BuildStatusWidget(
+                                text: "البيانات الشخصية",
+                                color: spProfileCon.pageIndex==1 ? AppColors.hoverMainColor : AppColors.mainColor,
+                                onTap: (){
+                                  spProfileCon.changeIndex(spProfileCon.pageIndex=1);
+                                  print(spProfileCon.pageIndex);
+                                },
+                              ),
 
-                            BuildStatusWidget(
-                              text: "التقييمات",
-                              color: spProfileCon.pageIndex==2 ? AppColors.hoverMainColor : AppColors.mainColor,
-                              onTap: (){
-                                spProfileCon.changeIndex(spProfileCon.pageIndex=2);
-                                print(spProfileCon.pageIndex);
-                              },
+                              BuildStatusWidget(
+                                text: "التقييمات",
+                                color: spProfileCon.pageIndex==2 ? AppColors.hoverMainColor : AppColors.mainColor,
+                                onTap: (){
+                                  spProfileCon.changeIndex(spProfileCon.pageIndex=2);
+                                  print(spProfileCon.pageIndex);
+                                },
 
-                            ),
+                              ),
 
-                          ],
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                 spProfileCon.pageIndex == 1 ?     SingleChildScrollView(
-                   child: Padding(
+                   spProfileCon.pageIndex == 1 ?     Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 40),
                         child:Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -318,10 +318,10 @@ class SpProfileScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                      ),
-                 ) :  SpRatingScreen(),
-                  ],
-              
+                      ) :  SpRatingScreen(),
+                    ],
+                
+                ),
               ),
             ),
           ),
