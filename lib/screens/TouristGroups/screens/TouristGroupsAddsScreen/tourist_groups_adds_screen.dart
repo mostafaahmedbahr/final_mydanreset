@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import '../../../core/components/colors.dart';
-import '../../../widgets/custom_app_bar.dart';
-import '../../../widgets/custom_text.dart';
+
+import '../../../../core/components/colors.dart';
+import '../../../../widgets/custom_app_bar.dart';
+import '../../../../widgets/custom_text.dart';
 import '../TouristGroupsOfferDetailsScreen/tourist_groups_offer_details_screen.dart';
   class TouristGroupsAddsScreen extends StatelessWidget {
   const TouristGroupsAddsScreen({Key? key}) : super(key: key);

@@ -5,9 +5,9 @@ import '../core/components/colors.dart';
 import '../screens/notifications_screen/notifications_screen.dart';
 import 'custom_text.dart';
 class CustomButton extends StatelessWidget {
-  const CustomButton({Key? key, required this.height, required this.width,   required this.btnColor, required this.btnText,required this.onPressed}) : super(key: key);
+  const CustomButton({Key? key, required this.height,   this.width,   required this.btnColor, required this.btnText,required this.onPressed}) : super(key: key);
 final double height;
-  final double width;
+  final double? width;
 
  final Color btnColor;
  final Widget btnText;

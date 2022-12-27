@@ -5,9 +5,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:get/get.dart';
 
-import '../../../TestFullScreen.dart';
-import '../../../core/components/colors.dart';
-import '../../../widgets/custom_app_bar.dart';
+import '../../../../TestFullScreen.dart';
+import '../../../../core/components/colors.dart';
+
+import '../../../../widgets/custom_app_bar.dart';
+import '../ToursitGroupsBillScreen/toursit_groups_bill_screen.dart';
+import '../groupReservationScreen/group_reservation_screen.dart';
 
 
 
@@ -248,7 +251,9 @@ class _TouristGroupsOfferDetailsScreenState extends State<TouristGroupsOfferDeta
                                fontSize: 16,
                                textColor: AppColors.mainColorWhite,
                              ),
-                             onPressed: (){},
+                             onPressed: (){
+                               Get.to(()=>GroupReservationScreen());
+                             },
                          ),
 
                       ],

@@ -1,5 +1,4 @@
- import 'package:final_mydanreset/screens/TouristGroups/tourist_groups_main_screen/tourist_groups_main_screen.dart';
-import 'package:final_mydanreset/screens/hotels_details_screen/hotels_details.dart';
+ import 'package:final_mydanreset/screens/hotels_details_screen/hotels_details.dart';
 import 'package:final_mydanreset/screens/hotels_screen/hotels_widgets/main_part_widget.dart';
  import 'package:final_mydanreset/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
  import '../../controller/customer_controller/home_controller.dart';
 import '../../core/components/colors.dart';
- import '../notifications_screen/notifications_screen.dart';
+ import '../TouristGroups/screens/tourist_groups_main_screen/tourist_groups_main_screen.dart';
+import '../notifications_screen/notifications_screen.dart';
  class HotelsScreen extends StatefulWidget {
   const HotelsScreen({Key? key}) : super(key: key);
 
